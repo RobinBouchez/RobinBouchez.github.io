@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.e1696d56.css",
-    "main.js": "/home/static/js/main.43187605.js",
-    "static/js/879.6158f6e1.chunk.js": "/home/static/js/879.6158f6e1.chunk.js",
-    "static/js/453.f7be5b23.chunk.js": "/home/static/js/453.f7be5b23.chunk.js",
-    "static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg": "/home/static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.02c72d7afd34c2f3f956.jpg",
-    "index.html": "/home/index.html",
-    "main.e1696d56.css.map": "/home/static/css/main.e1696d56.css.map",
-    "main.43187605.js.map": "/home/static/js/main.43187605.js.map",
-    "879.6158f6e1.chunk.js.map": "/home/static/js/879.6158f6e1.chunk.js.map",
-    "453.f7be5b23.chunk.js.map": "/home/static/js/453.f7be5b23.chunk.js.map"
+    "main.css": "/static/css/main.5ab35bd5.css",
+    "main.js": "/static/js/main.db18eb47.js",
+    "static/js/879.6158f6e1.chunk.js": "/static/js/879.6158f6e1.chunk.js",
+    "static/js/453.f7be5b23.chunk.js": "/static/js/453.f7be5b23.chunk.js",
+    "static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg": "/static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.02c72d7afd34c2f3f956.jpg",
+    "index.html": "/index.html",
+    "main.5ab35bd5.css.map": "/static/css/main.5ab35bd5.css.map",
+    "main.db18eb47.js.map": "/static/js/main.db18eb47.js.map",
+    "879.6158f6e1.chunk.js.map": "/static/js/879.6158f6e1.chunk.js.map",
+    "453.f7be5b23.chunk.js.map": "/static/js/453.f7be5b23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1696d56.css",
-    "static/js/main.43187605.js"
+    "static/css/main.5ab35bd5.css",
+    "static/js/main.db18eb47.js"
   ]
 }
