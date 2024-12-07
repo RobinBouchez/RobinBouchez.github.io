@@ -1,0 +1,2 @@
+If we implement a chat feature for our website, does that count as enough for the social requirement
+Do we need to support different languages

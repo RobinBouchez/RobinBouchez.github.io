@@ -1,0 +1,48 @@
+.search-bar  .searchbarWrapper {
+  display: flex;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: start;
+  gap: 0.5em;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+}
+
+.search-bar {
+    border: none;
+    width: 70%; 
+    gap: 3rem;
+}
+
+.search-bar .search-card {
+  border: none;
+  background: var(--background-color);
+}
+
+.search-bar .searchbarWrapper input {
+    border: none;
+    width: 100%;
+    outline: none;
+    background: var(--background-color);
+}
+
+.search-bar .tabs-div {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar .tabs-div .tab {
+  cursor: pointer;
+} 
+
+
+@media (max-width: 991px) {
+  .NavLinks {
+    display: none !important;
+  }
+}

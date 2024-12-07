@@ -1,0 +1,16 @@
+/* map.css */
+.map-container {
+    display: flex;
+    min-height: 60vh;
+    overflow: hidden;
+    border-radius: 20px; 
+    padding: 0;
+    margin: 2rem;
+    flex-shrink: inherit;
+
+}
+
+.marker {
+    background-color: red;
+    border-radius: 50%;
+}

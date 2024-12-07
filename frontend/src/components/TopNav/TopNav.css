@@ -1,0 +1,62 @@
+.navBar {
+  align-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-basis: 0%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 80px;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999; 
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.NavLinks {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NavText {
+    font-size: large;
+}
+
+.NavText:hover {
+  color: var(--text-color);
+}
+
+.rightNavButtons {
+  align-items: center;
+  align-self: stretch;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 16px;
+  padding: 0;
+}
+
+.languageSelector {
+  font-size: x-large;
+  color: rgba(0, 0, 0, 0.7);
+}

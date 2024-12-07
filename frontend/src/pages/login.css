@@ -1,0 +1,41 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.wrapper {
+  padding: 0;
+}
+  
+.loginFormWrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../components/assets/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+  
+
+
+.infoWrapper {
+  margin: 0;
+  padding: 20px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.no-padding {
+  padding: 0 !important;
+}

@@ -1,0 +1,15 @@
+.QuestionsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.QuestionsWrapper h2 {
+  padding: auto;
+
+}
+
+.accordion-custom {
+  --bs-accordion-bg: var(--background-color);
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+.App .header {
+    color: var(--text-color);
+
+  }
+
+.App .header .searchbar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border: none;
+  width: 100%;
+}
+  
+  .App .MainWrapper {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    z-index: 1;
+  }
+  
+  
+  .App .MainWrapper .PageContainer {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0 5rem;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    left: 0;
+  }
+  
+  
+  .App .MainWrapper .PageContainer .col {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .App .MainWrapper .PageContainer .row {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .MainWrapper .ContentGridCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+.MainWrapper .universityFilters{
+  width: 100%;
+}
+
+
+.MainWrapper .block {
+  width: 100%;
+}
+
+.MainWrapper h2 {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem ;
+
+}

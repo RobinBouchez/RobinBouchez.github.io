@@ -1,0 +1,31 @@
+.carousel {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+img {
+    height: 300px;
+    display: block;
+    width: 100%;
+}
+
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: inherit; /* Match the background to the image */
+    backdrop-filter: blur(10px); /* Adjust blur amount as needed */
+  }
+
+.carousel .caption {
+    z-index: 999;
+    top: 25%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+  }

@@ -1,0 +1,24 @@
+.TitleLogo .homeIcon {
+  font-size: xx-large;
+  color: rgb(58, 134, 255);
+}
+
+
+.TitleLogo {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.TitleLogo h1 {
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+}
