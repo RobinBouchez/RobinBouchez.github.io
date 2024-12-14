@@ -1,0 +1,18 @@
+.App .header {
+  color: var(--text-color);
+}
+
+.App .header .searchbar {
+  display: flex;
+  justify-content: center;
+  border: none;
+  width: 100%;
+}
+
+.App .MainWrapper {
+  width: 100%;
+  z-index: 1;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  margin: 0;
+}

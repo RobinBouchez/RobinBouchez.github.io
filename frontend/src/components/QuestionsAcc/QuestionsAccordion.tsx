@@ -1,38 +1,44 @@
 import { Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import './QuestionsAccordion.css';
+import { Users, Building2, MessageCircle } from 'lucide-react';
 
 function QuestionsAccordion() {
   return (
-    <Container className='QuestionsWrapper'> 
-    <h2>Question?</h2>
-    <Accordion className='accordion-custom' defaultActiveKey="0" flush>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-    </ Container>
+    <div className='QuestionsWrapper'>
+      <h2>
+        How SwitchAroom Works
+      </h2>
+      <Accordion className='accordion-custom' defaultActiveKey="0" flush>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>
+            <Building2 size={50} className="mx-auto text-blue-600 mb-4" />
+            <h3>List Your Room</h3>
+          </Accordion.Header>
+          <Accordion.Body>
+            Create a detailed profile of your current housing and what you're looking for.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>
+            <Users size={50} className="mx-auto text-blue-600 mb-4" />
+            <h3>Find Matches</h3>
+          </Accordion.Header>
+          <Accordion.Body>
+            Our smart algorithm finds students with compatible housing needs.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>
+            <MessageCircle size={50} className="mx-auto text-blue-600 mb-4" />
+            <h3>Connect & Swap</h3>
+          </Accordion.Header>
+          <Accordion.Body>
+            Communicate safely and arrange your room exchange directly.
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </ div>
   );
 }
 

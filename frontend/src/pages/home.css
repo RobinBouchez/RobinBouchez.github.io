@@ -1,68 +1,88 @@
-.App .header {
-    color: var(--text-color);
-
-  }
-
-.App .header .searchbar {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  border: none;
-  width: 100%;
-}
-  
-  .App .MainWrapper {
-    width: 100%;
-    min-height: 100vh;
-    max-height: 100vh;
-    z-index: 1;
-  }
-  
-  
-  .App .MainWrapper .PageContainer {
+  .homeContainer {
     align-items: center;
     display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0 5rem;
+    box-sizing: border-box;
+    margin-left: 0;
     justify-content: center;
     flex-direction: column;
-    flex-wrap: nowrap;
     left: 0;
   }
-  
-  
-  .App .MainWrapper .PageContainer .col {
+
+  .homeContainer .hero {
     width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .App .MainWrapper .PageContainer .row {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .MainWrapper .ContentGridCards {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .homeContainer .hero .heroText {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+
     
   }
 
-.MainWrapper .universityFilters{
+  .homeContainer .hero .heroButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .homeContainer .hero button {
+    height: 55px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    padding: 0 25px 0 25px;
+    margin: 10px 0;
+    
+}
+
+  .homeContainer h1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-weight: 800;
+  }
+  
+  .homeContainer .ContentGridCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    
+  }
+
+  .homeContainer .universityFilters{
   width: 100%;
 }
 
-
-.MainWrapper .block {
-  width: 100%;
-}
-
-.MainWrapper h2 {
+.homeContainer h2 {
   display: flex;
   align-items: flex-start;
-  padding: 1rem ;
+  justify-content: flex-start;
+  font-weight: 600;
 
+}
+
+.homeContainer .profileConfigButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.homeContainer .questionsAccordion {
+  width: 100%;
+  
 }

@@ -1,0 +1,58 @@
+.listing h1 {
+  font-weight: bold;
+  padding-top: 2rem;
+}
+
+.listing h2 {
+  font-weight: bold;
+  font-size: x-large;
+  padding: 0;
+}
+
+.listing .amenities-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.listing .amenities {
+  padding-bottom: 20px;
+}
+
+.listing .BookingOptions {
+  float: right;
+}
+
+.listing .mapComp {
+  width: 100%;
+
+}
+
+.addListingForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px; /* Limit the form width */
+  margin: 0 auto; /* Center the form */
+}
+
+.input-box input {
+  color: #000; /* Dark text */
+  border: 1px solid #000000; /* Visible border */
+  padding: 10px; /* Space inside input */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+  margin-bottom: 10px; /* Space between inputs */
+  border-radius: 5px; /* Optional rounded corners */
+
+  .input-box input:focus {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .input-box input:placeholder {
+    color: #040303a7;
+    border: 1px solid #000000; /* Visible border */
+  }
+}

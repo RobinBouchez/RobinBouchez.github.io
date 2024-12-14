@@ -8,11 +8,12 @@ const ContentCard = ({ listing }) => {
   const {
     id,
     name,
-    price = 150,
-    rating = 4.5,
-    reviewCount = 128,
-    imageUrl = "/api/placeholder/400/300",
-    location = "Boulder, Colorado",
+    price,
+    rating,
+    hostThumbnail,
+    reviewsCount,
+    images,
+    address,
     isFavorite = false,
     onFavoriteClick,
   } = listing || {};
@@ -22,41 +23,34 @@ const ContentCard = ({ listing }) => {
   };
 
   return (
-    <div className="content-card overflow-hidden shadow-lg bg-white ">
+    <div className="content-card">
       {/* Image Container */}
-      <div className="">
         <img
-          src={imageUrl}
+          src={hostThumbnail}
           alt={name}
-          className="w-full h-full"
-          onError={handleImageError}
           loading="lazy"
         />
-      </div>
-
       
       <div className="bottomCard">
-        {/* Header with Rating */}
-          <div>
-            <FaRegStar className="h-4 w-4 text-pink-500 mr-1" />
-            <span className="text-sm text-gray-600">
-              {rating.toFixed(1)} ({reviewCount.toLocaleString()} reviews)
+          <div className='reviews'>
+            <FaRegStar className="icon" />
+            <span>
+              {rating.toFixed(1)} ({reviewsCount} reviews)
             </span>
         </div>
 
         {/* Title */}
-        <h3 className="font-semibold text-lg mb-1 text-gray-900">
+        <h1>
           {name}
-        </h3>
+        </h1>
 
         {/* Location */}
-        <p className="text-gray-600 text-sm mb-2">{location}</p>
+        <h2>{address}</h2>
 
         {/* Price */}
-          <span className="text-lg font-semibold">
-            ${price.toLocaleString()}
+          <span className="price">
+            ${price.total} / night
           </span>
-          <span className="text-gray-600 text-sm ml-1">/ night</span>
         </div>
     </div>
   );
@@ -64,16 +58,15 @@ const ContentCard = ({ listing }) => {
 
 ContentCard.propTypes = {
   listing: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    rating: PropTypes.number,
-    reviewCount: PropTypes.number,
-    imageUrl: PropTypes.string,
-    location: PropTypes.string,
-    isFavorite: PropTypes.bool,
-    onFavoriteClick: PropTypes.func,
-  })
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.shape({
+      rate: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+      total: PropTypes.number.isRequired,
+    }).isRequired,
+    // Add other props as necessary
+  }).isRequired,
 };
 
 export default ContentCard;

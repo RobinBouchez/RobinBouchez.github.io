@@ -14,7 +14,6 @@
   margin: 0;
   margin-left: 0;
   margin-right: 0;
-  padding: 0 5rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -24,8 +23,8 @@
 }
 
 .navbar {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 1rem 2rem;
+  background-color: var(--background-color);
 }
 
 .NavLinks {
@@ -38,25 +37,60 @@
     margin: 0;
 }
 
-.NavText {
+.navBar .NavText {
     font-size: large;
 }
 
-.NavText:hover {
+.navBar .NavText:hover {
   color: var(--text-color);
 }
 
-.rightNavButtons {
+.navBar .rightNavButtons {
   align-items: center;
   align-self: stretch;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  column-gap: 16px;
   padding: 0;
 }
 
-.languageSelector {
+.navBar .languageSelector {
   font-size: x-large;
-  color: rgba(0, 0, 0, 0.7);
+}
+
+.navBar .ProfileDropdown img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}   
+
+.navBar .ProfileDropdown {
+  background: none;
+  border: none;
+}
+
+.navBar .ProfileDropdown img:hover {
+  --acc-sine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1) translate3d(1%,1%,0);
+  transition: all var(--acc-sine) 150ms;
+}
+
+.navBar .ProfileDropdown {
+  --bs-btn-hover-bg: var(--background-color);
+  --bs-btn-bg: var(--background-color);
+  --bs-btn-active-bg: var(--background-color);
+  --bs-btn-color: var(--icon-color);
+  --bs-btn-hover-color: var(--icon-color);
+  --bs-btn-active-color: var(--icon-color);
+}
+
+.navBar .languageIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.navBar .NavButton {  
+  margin-right: 10px;
+  margin-left: 10px;
 }

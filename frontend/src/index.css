@@ -2,7 +2,6 @@
 
 
 body {
-  --text-color: rgb(0, 0, 0);
   font-family:'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

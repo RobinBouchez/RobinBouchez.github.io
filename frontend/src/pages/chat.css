@@ -1,0 +1,29 @@
+.chat-page {
+  height: 100vh;
+  background-color: hsl(var(--base-200));
+}
+
+.chat-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.chat-page-content {
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 72rem;
+  height: calc(100vh - 8rem);
+}
+
+.sidebar {
+  display: flex;
+  height: 100%;
+  flex-direction: column; 
+
+
+  height: calc(100vh - 8rem);
+}

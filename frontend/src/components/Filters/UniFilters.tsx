@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Nav from 'react-bootstrap/Nav';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 import './filters.css'
 import axios from 'axios';
 
@@ -11,7 +13,13 @@ interface University {
 
 function UniFilters() {
   const [universities, setUniversities] = useState<University[]>([]);
+  const [selectedCountry, setSelectedCountry] = React.useState('region');
 
+  const handleSelect = (eventKey: string | null) => {
+  if (eventKey) {
+    setSelectedCountry(eventKey);
+  }
+  };
 
   useEffect(() => {
     const fetchUniversities = async () => {
@@ -29,7 +37,7 @@ function UniFilters() {
         },
         {
           Logo: "https://upload.wikimedia.org/wikipedia/en/1/18/VUB_schild2.png",
-          Name: "Vrije Universiteit Brussel (VUB, Free University of Brussels)"
+          Name: "Vrije Universiteit Brussel"
         },
         {
           Logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Universiteit_Antwerpen_nieuw_logo.svg",
@@ -44,7 +52,7 @@ function UniFilters() {
 
     const options = {
       method: 'GET',
-      url: 'https://university-data.p.rapidapi.com/api/v2/country/Belgium',
+      url: 'https://university-data.p.rapidapi.com/api/v2/country/' + selectedCountry,
       headers: {
         'x-rapidapi-key': 'a880a9a9dfmsh627a3f34020e7d2p1614c2jsnd2e4119a7e11',
         'x-rapidapi-host': 'university-data.p.rapidapi.com'
@@ -52,9 +60,13 @@ function UniFilters() {
     };
 
     try {
-      const response = mockResponse; //await axios.request(options);
+      if(selectedCountry != "region") {
+      const response = await axios.request(options);
       setUniversities(response.data);
-      console.log(response.data);
+      } else {
+        const response = mockResponse;
+        setUniversities(response.data);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -62,18 +74,38 @@ function UniFilters() {
   }
   fetchUniversities();
     
-  }, []);
+  }, [selectedCountry]);
+
+
 
   return (
-    <Nav fill className="filterNav" variant="tabs">
+    <div>
+    <h2>Find popular universities in your
+    <Dropdown drop="end" onSelect={handleSelect}>
+    <Dropdown.Toggle className="dropdownButton" style={{ backgroundColor: 'inherit', borderColor: 'inherit', color: 'inherit' }}>
+      {selectedCountry}
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item eventKey="Belgium">Belgium</Dropdown.Item>
+      <Dropdown.Item eventKey="United States">United States</Dropdown.Item>
+      <Dropdown.Item eventKey="France">France</Dropdown.Item>
+    </Dropdown.Menu>
+    </Dropdown>
+  </h2>
+    <ul className="filterNav">
       {universities.map((uni, index) => (
-        <Nav.Item key={index} className="filterNavItem">
-          <img src={uni.Logo} alt={uni.Name} className="filterLogo"/> 
-          <Nav.Link className="filterLink">{uni.Name}</Nav.Link>
-        </Nav.Item>
+      <li key={index} className="filterNavItem" >
+        <img src={uni.Logo} alt={uni.Name} className="filterLogo"/> 
+        {/* <a className="filterLink" href="/">{uni.Name}</a> */}
+      </li>
       ))}
-    </Nav>
+    </ul>
+
+    </div>
   );
 }
 
 export default UniFilters;
+
+
+

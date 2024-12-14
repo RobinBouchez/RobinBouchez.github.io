@@ -1,0 +1,100 @@
+/* MessageInput.css */
+.message-input-container {
+  padding: 1rem;
+  width: 100%;
+}
+
+*:focus {
+  outline: none;
+}
+
+.image-preview-container {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image-preview-wrapper {
+  position: relative;
+}
+
+.image-preview {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--zinc-700));
+}
+
+.image-remove-button {
+  position: absolute;
+  top: -0.375rem;
+  right: -0.375rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--base-300));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(237, 237, 237);
+  border-radius: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.message-input-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+  border: none;
+  
+}
+
+.message-text-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.image-upload-button {
+  display: none;
+  color: var(--icon-color);
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .image-upload-button {
+      display: flex;
+  }
+}
+
+.image-upload-button-inactive {
+  color: hsl(var(--zinc-400));
+}
+
+.image-upload-button-active {
+  color: hsl(var(--emerald-500));
+}
+
+.send-message-button {
+  min-width: auto;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+.send-message-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

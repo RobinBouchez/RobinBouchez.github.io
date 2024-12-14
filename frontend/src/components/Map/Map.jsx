@@ -1,60 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Map, { Marker, NavigationControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
-import axios from "axios";
 import Spinner from 'react-bootstrap/Spinner';
 
-function MapComponent() {
-  const [locationData, setLocationData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-
-    const mockData = { data: { location: { longitude: 0, latitude: 0 } } };
-    const fetchLocation = async () => {
-      const options = {
-        method: "GET",
-        url: "https://ip-geo-location.p.rapidapi.com/ip/check",
-        params: {
-          format: "json",
-          language: "en",
-        },
-        headers: {
-          "x-rapidapi-key":
-            "a880a9a9dfmsh627a3f34020e7d2p1614c2jsnd2e4119a7e11",
-          "x-rapidapi-host": "ip-geo-location.p.rapidapi.com",
-        },
-      };
-
-      try {
-        const response = await axios.request(options);
-        setLocationData(response.data);
-        setLoading(false);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
-    fetchLocation();
-  }, []);
-
-  if (loading) {
+function MapComponent({ location }) {
+  if (!location) {
     return <div>
-      <Spinner animation="border" />
-      <p>Getting map data</p>
-      </div> 
-  }
-
+    <Spinner animation="border" />
+    <p>Getting map data</p>
+    </div> 
+  } else {
   return (
-    <div className="map-container">
-      {locationData && (
+    <div className="mapContainer">
         <Map
-          className="map"
           initialViewState={{
-            longitude: locationData.location.longitude,
-            latitude: locationData.location.latitude,
+            longitude: location.longitude,
+            latitude: location.latitude,
             zoom: 15,
           }}
           mapStyle="mapbox://styles/mapbox/streets-v11"
@@ -62,14 +25,14 @@ function MapComponent() {
         >
           <NavigationControl position="top-left" />
           <Marker
-            longitude={locationData.location.longitude}
-            latitude={locationData.location.latitude}
+            longitude={location.longitude}
+            latitude={location.latitude}
             color="red"
           />
         </Map>
-      )}
     </div>
   );
+}
 }
 
 export default MapComponent;

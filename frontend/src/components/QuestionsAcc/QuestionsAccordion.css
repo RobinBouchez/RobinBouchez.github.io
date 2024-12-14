@@ -1,15 +1,29 @@
 .QuestionsWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  text-align: left;
+  width: inherit;
 }
 
 .QuestionsWrapper h2 {
-  padding: auto;
-
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .accordion-custom {
   --bs-accordion-bg: var(--background-color);
+  height: 100%;
   width: 100%;
+}
+
+@media (max-width: 775px) {
+  .QuestionsWrapper {
+    flex-direction: column;
+  }
 }

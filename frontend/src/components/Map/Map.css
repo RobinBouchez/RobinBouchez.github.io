@@ -1,12 +1,14 @@
 /* map.css */
-.map-container {
+.mapContainer {
+    width: 100%;
     display: flex;
     min-height: 60vh;
     overflow: hidden;
     border-radius: 20px; 
     padding: 0;
-    margin: 2rem;
+    margin: 0;
     flex-shrink: inherit;
+    height: 100px;
 
 }
 

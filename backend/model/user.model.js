@@ -21,8 +21,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 6,
   },
-
-});
+},
+  {timestamps: true}  
+)
 
 const User = model('users', userSchema);
 export default User;

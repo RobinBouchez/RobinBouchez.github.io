@@ -1,0 +1,50 @@
+.pageTitle {
+    margin-left: 10%;
+}
+
+.accountWrapper .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.accountWrapper .profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;  
+}   
+
+
+.profile-card h1 {
+    font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-card h2 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+
+  .accountWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 10%;
+  }

@@ -29,8 +29,8 @@ function LoginPage() {
                         <div className="infoWrapper">
                             <h1>Welcome back! &#128512; </h1>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Beatae voluptates debitis nam deleniti maiores facilis vero magnam vitae 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Beatae voluptates debitis nam deleniti maiores facilis vero magnam vitae
                                 distinctio eius quae ducimus sequi veritatis, ea perspiciatis, sit non neque fugit.
                             </p>
                         </div>

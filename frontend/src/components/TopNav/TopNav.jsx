@@ -1,15 +1,16 @@
-import React, { useContext, useEffect  } from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 import { MdLanguage } from "react-icons/md";
-import { Home01Icon } from 'hugeicons-react';
+import { Home01Icon } from "hugeicons-react";
 import { UserContext } from "../../context/userContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Dropdown from "react-bootstrap/Dropdown";
+import Image from "react-bootstrap/Image";
 import "./TopNav.css";
-
+import imagePic from "../assets/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg";
 
 import TitleLogo from "../TitleLogo/TitleLogo";
 
@@ -18,24 +19,24 @@ function TopNav() {
   const navigate = useNavigate();
   const logout = async (e) => {
     e.preventDefault();
-      const response = await axios.post('/logout');
-      setUser(null);
-      navigate('/home');
+    await axios.post("/auth/logout");
+    setUser(null);
+    navigate("/home");
   };
-  
+
   const login = async (e) => {
     e.preventDefault();
-    navigate('/login');
-  }
+    navigate("/login");
+  };
   const register = async (e) => {
     e.preventDefault();
-    navigate('/register');
-  }
+    navigate("/register");
+  };
 
   useEffect(() => {
-    console.log('Current user:', user);
+    console.log("Current user:", user);
   }, [user]);
-  
+
   return (
     <Navbar className="navBar navbar-expand-lg">
       <TitleLogo />
@@ -43,34 +44,61 @@ function TopNav() {
         <Nav.Link className="NavText" href="../home">
           Home
         </Nav.Link>
-        <Nav.Link className="NavText" href="../home">
+        <Nav.Link className="NavText" href="../listing">
           Browse
         </Nav.Link>
-        <Nav.Link className="NavText" href="../home">
-          Co-housing
-        </Nav.Link>
-        <Nav.Link hidden={user == null} className="NavText" href="../account">
-          Account
-        </Nav.Link>
       </Nav>
-      <Nav className="rightNavButtons NavLinks">  
+      <Nav className="rightNavButtons NavLinks">
         <form onSubmit={logout}>
-        <Button hidden={user == null} className="NavButton" as="input" type="submit" value="Logout" />
+          <Dropdown drop="down-centered" hidden={user == null}>
+            <Dropdown.Toggle className="ProfileDropdown">
+              <Image src={imagePic} roundedCircle />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/account" eventKey="account">
+                Account
+              </Dropdown.Item>
+              <Dropdown.Item href="/messages" eventKey="messages">
+                Chat
+              </Dropdown.Item>
+              <Dropdown.Item href="/addlisting">Add listing</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item as="button" type="submit">
+                Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </form>
         <form onSubmit={login}>
-         <Button hidden={user != null} className="NavButton" type="submit" as="input" value="Login"/>
+          <Button
+            hidden={user != null}
+            className="NavButton"
+            type="submit"
+            as="input"
+            value="Login"
+          />
         </form>
         <form onSubmit={register}>
-        <Button
-          hidden={user != null} 
-          className="NavButton"
-          type="submit"
-          as="input"
-          value="Register"
+          <Button
+            hidden={user != null}
+            className="NavButton"
+            type="submit"
+            as="input"
+            value="Register"
           />
         </form>
         <div className="languageSelector">
-        <MdLanguage />
+          <Dropdown drop="down-centered">
+            <Dropdown.Toggle className="ProfileDropdown">
+              <MdLanguage className="languageIcon" />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/#" eventKey="account">
+                English
+              </Dropdown.Item>
+              <Dropdown.Item href="/#">Dutch</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </Nav>
     </Navbar>

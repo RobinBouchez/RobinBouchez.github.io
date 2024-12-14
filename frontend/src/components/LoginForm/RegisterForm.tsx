@@ -22,17 +22,16 @@ function RegisterForm() {
             [name]: value
         }));
     };
-    
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/register', formData);
-            console.log(response.data);
+            const response = await axios.post('/auth/register', formData);
+            console.log(response);
             navigate('/login');
-            
+
         } catch (error) {
             console.error('Registration failed', error);
-            // Handle registration error
         }
     };
 
@@ -41,46 +40,46 @@ function RegisterForm() {
             <form onSubmit={handleSubmit}>
                 <h1>Register</h1>
                 <div className="input-box">
-                    <input 
-                        type="text" 
-                        name="firstName" 
-                        placeholder="Firstname" 
+                    <input
+                        type="text"
+                        name="firstName"
+                        placeholder="First name"
                         value={formData.firstName}
                         onChange={handleChange}
-                        required 
+                        required
                     />
                     <FaUser className="icon" />
                 </div>
                 <div className="input-box">
-                    <input 
-                        type="text" 
-                        name="lastName" 
-                        placeholder="Lastname" 
+                    <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last name"
                         value={formData.lastName}
                         onChange={handleChange}
-                        required 
+                        required
                     />
                     <FaUser className="icon" />
                 </div>
                 <div className="input-box">
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Email" 
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
                         value={formData.email}
                         onChange={handleChange}
-                        required 
+                        required
                     />
                     <MdEmail className="icon" />
                 </div>
                 <div className="input-box">
-                    <input 
-                        type="password" 
-                        name="password" 
-                        placeholder="Password" 
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
                         value={formData.password}
                         onChange={handleChange}
-                        required 
+                        required
                     />
                     <FaLock className="icon" />
                 </div>
