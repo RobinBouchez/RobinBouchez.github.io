@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ab35bd5.css",
-    "main.js": "/static/js/main.db18eb47.js",
+    "main.css": "/static/css/main.c7211455.css",
+    "main.js": "/static/js/main.c4f51cac.js",
     "static/js/879.6158f6e1.chunk.js": "/static/js/879.6158f6e1.chunk.js",
     "static/js/453.f7be5b23.chunk.js": "/static/js/453.f7be5b23.chunk.js",
     "static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg": "/static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.02c72d7afd34c2f3f956.jpg",
     "index.html": "/index.html",
-    "main.5ab35bd5.css.map": "/static/css/main.5ab35bd5.css.map",
-    "main.db18eb47.js.map": "/static/js/main.db18eb47.js.map",
+    "main.c7211455.css.map": "/static/css/main.c7211455.css.map",
+    "main.c4f51cac.js.map": "/static/js/main.c4f51cac.js.map",
     "879.6158f6e1.chunk.js.map": "/static/js/879.6158f6e1.chunk.js.map",
     "453.f7be5b23.chunk.js.map": "/static/js/453.f7be5b23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ab35bd5.css",
-    "static/js/main.db18eb47.js"
+    "static/css/main.c7211455.css",
+    "static/js/main.c4f51cac.js"
   ]
 }
