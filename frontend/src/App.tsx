@@ -17,7 +17,7 @@ import ChatPage from './pages/chat';
 import { useAuthStore } from './store/useAuthStore';
 
 
-axios.defaults.baseURL = 'http://localhost:4000/api/';
+axios.defaults.baseURL = '/api/';
 axios.defaults.withCredentials = true;
 
 function App() {
