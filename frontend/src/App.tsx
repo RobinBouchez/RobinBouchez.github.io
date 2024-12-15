@@ -37,12 +37,12 @@ function App() {
     <UserProvider>
       <Routes>
         <Route path="/" element={<HomeWrapper />}>
-          <Route path="home" element={<Home />} />
-          <Route path="account" element={<Account />} />
-          <Route path="listing" element={<ListingPage />} />
-          <Route path="addlisting" element={<AddListingPage />} />
-          <Route path="messages" element={<ChatPage />} />
-          <Route path="blog" element={<Blog />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/listing" element={<ListingPage />} />
+          <Route path="/addlisting" element={<AddListingPage />} />
+          <Route path="/messages" element={<ChatPage />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
 		    <Route path="/searchResult" element={<SearchResult />} />
         <Route path="/FAQ" element={<FAQ />} />
