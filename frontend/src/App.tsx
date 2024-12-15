@@ -19,10 +19,10 @@ import Blog from './pages/blog';
 import BlogDetails from './pages/blogDetails';
 import FAQ from './pages/faq';
 
-
+import { HashRouter as Router } from "react-router-dom";
 axios.defaults.baseURL = '/api/';
 axios.defaults.withCredentials = true;
-import { HashRouter as Router } from "react-router-dom";
+
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
