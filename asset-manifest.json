@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.38938cf7.css",
-    "main.js": "/static/js/main.6e032de1.js",
+    "main.js": "/static/js/main.9bf1d4da.js",
     "static/js/879.6158f6e1.chunk.js": "/static/js/879.6158f6e1.chunk.js",
     "static/js/453.f7be5b23.chunk.js": "/static/js/453.f7be5b23.chunk.js",
     "static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg": "/static/media/international-student-navigator-australia-xCzDFEFPK1w-unsplash.02c72d7afd34c2f3f956.jpg",
     "index.html": "/index.html",
     "main.38938cf7.css.map": "/static/css/main.38938cf7.css.map",
-    "main.6e032de1.js.map": "/static/js/main.6e032de1.js.map",
+    "main.9bf1d4da.js.map": "/static/js/main.9bf1d4da.js.map",
     "879.6158f6e1.chunk.js.map": "/static/js/879.6158f6e1.chunk.js.map",
     "453.f7be5b23.chunk.js.map": "/static/js/453.f7be5b23.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38938cf7.css",
-    "static/js/main.6e032de1.js"
+    "static/js/main.9bf1d4da.js"
   ]
 }
