@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import multer from "multer";
 import axios from "axios";
 import OpenAI from "openai";
+import path from "path";
 import fs from "fs";
 
 // Models
@@ -120,6 +121,13 @@ app.get("/api/faq", async (req, res) => {
   const userData = await User.find();
   res.json(userData);
 });
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
 
 //Route to get all listings.
 app.get("/getListings", async (req, res) => {
