@@ -34,7 +34,7 @@ function App() {
   }, [checkAuth]);
 
   return (
-    <Router>
+    <Router basename="/switcharoom.social">
     <UserProvider>
       <Routes>
         <Route path="/" element={<HomeWrapper />}>
