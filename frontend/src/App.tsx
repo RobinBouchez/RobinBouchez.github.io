@@ -35,7 +35,6 @@ function App() {
 
   return (
     <UserProvider>
-      <Router>
       <Routes>
         <Route path="/" element={<HomeWrapper />}>
           <Route path="/home" element={<Home />} />
@@ -51,7 +50,6 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
-      </Router>
     </UserProvider>
   );
 }
