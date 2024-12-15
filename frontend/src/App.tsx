@@ -48,8 +48,8 @@ function App() {
 		    <Route path="/searchResult" element={<SearchResult />} />
         <Route path="/FAQ" element={<FAQ />} />
         </Route>
-        <Route path="https://switcharoom.social/login" element={<LoginPage />} />
-        <Route path="https://switcharoom.social/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
       </Router>
     </UserProvider>
