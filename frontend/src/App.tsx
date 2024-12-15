@@ -8,7 +8,7 @@ import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
 import Account from './pages/account';
 import SearchResult from  './pages/searchResult';
-
+import { HashRouter as Router } from "react-router-dom";
 import { UserProvider } from './context/userContext';
 import axios from 'axios';
 import ListingPage from './pages/listingPage';
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <UserProvider>
+      <Router>
       <Routes>
         <Route path="/" element={<HomeWrapper />}>
           <Route path="/home" element={<Home />} />
@@ -50,6 +51,7 @@ function App() {
         <Route path="https://switcharoom.social/login" element={<LoginPage />} />
         <Route path="https://switcharoom.social/register" element={<RegisterPage />} />
       </Routes>
+      </Router>
     </UserProvider>
   );
 }
