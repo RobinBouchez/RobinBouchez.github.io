@@ -1,0 +1,107 @@
+.blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.blogContainer .blogTitle {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.blogContainer .blogGrid {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+}
+
+.blogContainer .blogCard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.blogContainer .blogCard:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.blogContainer .blogCard-content {
+    margin: 0;
+    padding: 0;
+}
+
+.blogContainer .blogCard .blogCard-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.blogContainer .blogCard .blogCard-info img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.blogContainer .blogCard .blogCard-info .author{
+    font-weight: 600;
+}
+
+.blogContainer .blogCard .blogCard-info .time {
+    color: #acacac; 
+}
+
+
+.blogContainer .blogCard .blogCard-info .date {
+    color: #acacac;
+    font-size: small;
+}
+
+.blogContainer .blogCard .blogCard-info .author-date {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0   ;
+}
+
+.blogContainer .blogCard .blogCard-info p {
+    padding: 0;
+    margin: 0;
+}
+
+
+.blogContainer .blogCard .blogCard-info-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.blogContainer .blogCard .blogCard-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.blogContainer .blogCard .blogCard-badges {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.blogContainer .blogCard .blogCard-badge  {
+    background-color: #b9b9b9 !important;
+}

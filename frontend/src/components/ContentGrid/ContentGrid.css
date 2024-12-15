@@ -1,7 +1,36 @@
 .contentGrid {
+    width: 1370px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    overflow-x: auto; /* Ensure horizontal scrolling */
     padding: 0;
     margin: 0;
+    align-items: center;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    list-style: none;
+}
+
+/* Hide scrollbar in Webkit browsers (Chrome, Safari) */
+.contentGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contentContainer .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #00000033;
+    color: #00000033;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
 }

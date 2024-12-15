@@ -78,8 +78,10 @@
 
 .homeContainer .profileConfigButton {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .homeContainer .questionsAccordion {

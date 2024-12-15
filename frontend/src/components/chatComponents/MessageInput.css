@@ -8,6 +8,10 @@
   outline: none;
 }
 
+.image-upload-button-input {
+  display: none;
+}
+
 .image-preview-container {
   margin-bottom: 0.75rem;
   display: flex;

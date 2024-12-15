@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./LoginForm.css";
 import { FaUser, FaLock, FaGoogle } from "react-icons/fa";
 import { useGoogleLogin } from "@react-oauth/google";
@@ -11,14 +11,23 @@ function LoginForm({ onLoginFail }) {
   // Accept onLoginFail as a prop
   const navigate = useNavigate();
   const [data, setData] = useState({
+    _id: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
+    profilePic: "",
   });
   const { user, setUser } = useContext(UserContext);
+  const [accessToken, setAccesstoken] = useState( { access_token: '' } );
   const { login, isLoggingIn } = useAuthStore();
-  // const login = useGoogleLogin({
-  //   onSuccess: (tokenResponse) => console.log(tokenResponse),
-  // });
+const googleLogin = useGoogleLogin({
+  onSuccess: (codeResponse) => {
+    setUser(codeResponse);
+    setAccesstoken(codeResponse);
+  },
+  onError: (error) => console.log('Login Failed:', error)
+});
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -51,6 +60,30 @@ function LoginForm({ onLoginFail }) {
     }));
   };
 
+useEffect(() => {
+  const fetchUserData = async () => {
+    if (user) {
+      try {
+        const res = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+          headers: {
+            Authorization: `Bearer ${user.access_token}`,
+            Accept: 'application/json'
+          },
+          withCredentials: false
+        });
+        const googleuser = res.data;
+        const response = await axios.post("/auth/loginGoogle", { _id: googleuser.id, firstName: googleuser.given_name, lastName: googleuser.family_name, email: googleuser.email, profilePic: googleuser.picture, access_token: accessToken.access_token });
+        setUser(response.data.user);
+        login(response.data.user);
+        navigate("/home");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+  fetchUserData();
+}, [user]);
+
   return (
     <div className="loginform">
       <form action="" onSubmit={loginUser}>
@@ -79,7 +112,7 @@ function LoginForm({ onLoginFail }) {
         </div>
         <button type="submit">Login</button>
         <div className="google-login">
-          <button type="button" onClick={() => login()}>
+          <button type="button" onClick={() => googleLogin()}>
             <FaGoogle className="icon googleicon" />
             Login with Google
           </button>

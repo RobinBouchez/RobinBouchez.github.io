@@ -15,13 +15,13 @@ const ChatHeader = () => {
                     <div className="chat-header-avatar">
                         <img 
                             src={selectedUser.profilePic || "/avatar.png"} 
-                            alt={selectedUser.fullName} 
+                            alt={selectedUser.firstName} 
                         />
                     </div>
                     {/* User info */}
                     <div className="chat-header-user-details">
                         <h3 className="chat-header-user-name">
-                            {selectedUser.fullName}
+                            {selectedUser.firstName} {selectedUser.lastName}
                         </h3>
                         <p className="chat-header-user-status">
                             {onlineUsers.includes(selectedUser._id) ? "Online" : "Offline"}

@@ -1,0 +1,56 @@
+.content-card-horz {
+    display: flex; 
+    flex-direction: row;
+    width: 600px;
+    margin: 20px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-card-horz img {
+    width: 200px; 
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-card-horz .bottomCard {
+    flex: 1;
+    text-align: left;
+    padding: 20px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-card-horz .bottomCard .reviews {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content-card-horz .bottomCard .icon {
+    font-size: medium;
+}
+
+.content-card-horz h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.content-card-horz h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+.content-card-horz .price {
+    position: relative;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-end;
+}

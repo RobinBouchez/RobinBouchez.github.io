@@ -3,27 +3,30 @@ import { FaRegStar, FaBed, FaBath } from "react-icons/fa";
 import PropTypes from 'prop-types';
 
 import './contentCard.css'
+import './contentCardHorz.css'
 
-const ContentCard = ({ listing }) => {
+const ContentCard = ({ listing, isHorizontal = false }) => {
   const {
-    id,
-    name,
-    price,
-    rating,
-    hostThumbnail,
-    reviewsCount,
+    id= "default",
+    name="default",
+    price= 999,
+    rating= 9999,
+    hostThumbnail="https://via.placeholder.com/150",
+    reviewsCount= 999,
     images,
     address,
     isFavorite = false,
     onFavoriteClick,
   } = listing || {};
-
+console.log('listing', listing);
   const handleImageError = (e) => {
     e.target.src = "/api/placeholder/400/300"; // Fallback image
   };
 
+  const cardClass = isHorizontal ? 'content-card-horz' : 'content-card';  //To determine which css file to apply
+
   return (
-    <div className="content-card">
+    <div className={cardClass}>
       {/* Image Container */}
         <img
           src={hostThumbnail}

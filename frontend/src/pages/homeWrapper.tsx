@@ -8,10 +8,16 @@ import Searchbar from "../components/SearchBar/searchbar";
 
 import Footer from "../components/Footer/footer";
 import ProfileConfig from "../components/ProfileConfig/conf";
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 
 function HomeWrapper() {
+  const navigate = useNavigate();
+  const handleSearch = (query: string) => {
+      if (query.trim()) {
+            navigate(`/SearchResult?query=${encodeURIComponent(query)}&includeListings=true`);
+        }
+    };
 
   return (
     <div className="App">
@@ -20,8 +26,8 @@ function HomeWrapper() {
       </div>
       <nav className="header">
           <TopNav />
-        <div className="searchbar">
-          <Searchbar />
+          <div className="searchbar">
+          <Searchbar onSearch={handleSearch}/>
         </div>
       </nav>
       <div className='MainWrapper'>

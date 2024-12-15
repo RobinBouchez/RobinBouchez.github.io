@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from "cors";
-import { getAccount, registerUser, loginUser, logoutUser } from '../controllers/auth.controller.js';
+import { getAccount, registerUser, loginUser, logoutUser, loginGoogleUser } from '../controllers/auth.controller.js';
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
@@ -14,7 +14,9 @@ router.use(cors({
 router.post('/logout', logoutUser);
 router.post('/register', registerUser);
 router.post('/login', loginUser);
+router.post('/loginGoogle', loginGoogleUser);
 router.get('/account', protectRoute, getAccount);
+
 
 
 export default router;

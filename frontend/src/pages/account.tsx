@@ -5,7 +5,6 @@ import './account.css'
 
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
-import imagePic from '../components/assets/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg';
 import { Spinner } from 'react-bootstrap';
 
 function AccountPage() {
@@ -21,7 +20,7 @@ function AccountPage() {
             <Container fluid="true" className="PageContainer">
                 <div className='accountWrapper'>
                     <div className="profile-card">
-                        <img src={imagePic} alt={user.firstName} />
+                        <img src={user.profilePic} alt={user.firstName} />
                         <h1>{user.firstName} {user.lastName}</h1>
                         <h2>as quest</h2>
                     </div>

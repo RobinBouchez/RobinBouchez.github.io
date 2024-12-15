@@ -1,4 +1,5 @@
-import { set, connect } from "mongoose";
+import mongoose from 'mongoose';
+const { set, connect } = mongoose;
 
 export const connectToDB = async () => {
   try {

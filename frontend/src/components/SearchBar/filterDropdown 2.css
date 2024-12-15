@@ -1,0 +1,216 @@
+/* Dropdown container */
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Filter button */
+.filter-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative; /* Needed for positioning the triangle */
+}
+
+/* Triangle indicator */
+.filter-button::after {
+    content: ""; /* No text, just the triangle */
+    position: relative;
+    margin-left: 8px;
+    border-left: 5px solid transparent; /* Left triangle side */
+    border-right: 5px solid transparent; /* Right triangle side */
+    border-top: 5px solid var(--text-color); /* Top triangle side (color of the triangle) */
+    display: inline-block;
+    vertical-align: middle; /* Align triangle vertically with the text */
+}
+
+/* Button hover effect */
+.filter-button:hover,
+.filter-button.active {
+    background-color: rgba(234, 233, 233, 0.42);
+    color: var(--text-color);
+}
+
+.filter-button:hover::after,
+.filter-button.active::after{
+    border-top-color: var(--primary-hover-color); /* Change triangle color on hover */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 110%; /* Position below the button */
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 10px;
+    width: 300px; /* Extended width to fit inputs */
+}
+
+/* Default dropdown item */
+.dropdown-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column; /* Stack vertically for most filters */
+    gap: 5px;
+    border: 2px solid transparent; /* Default transparent border */
+    user-select: none;
+}
+
+/* Toggle-specific dropdown items */
+.dropdown-item.toggle {
+    flex-direction: row; /* Align horizontally for toggles */
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Highlight selected dropdown item */
+.dropdown-menu .dropdown-item.selected {
+    background-color: #f9f6ee;
+    color: var(--text-color);
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 12px;
+    transition: border 0.3s ease;
+}
+
+/* Filter labels */
+.filter-label {
+    font-size: 1rem;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+/* Price range container */
+.price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Inputs for min and max */
+.price-range-inputs input {
+    width: 80px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Dash between inputs */
+.price-range-inputs span {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Rating slider container */
+.rating-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rating-slider label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Styling the slider track */
+.rating-slider input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    background: #ccc;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Slider thumb (for Webkit browsers) */
+.rating-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px; /* Thumb width */
+    height: 16px; /* Thumb height */
+    border-radius: 50%;
+    background: black; /* Thumb color */
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Slider thumb (for Mozilla browsers) */
+.rating-slider input[type="range"]::-moz-range-thumb {
+    width: 16px; /* Thumb width */
+    height: 16px; /* Thumb height */
+    border-radius: 50%;
+    background: black; /* Thumb color */
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Ensure slider thumb is visible and styled */
+.rating-slider input[type="range"]:focus {
+    outline: none;
+}
+
+/* The toggle-switch container */
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider (background and knob) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red; /* Default background */
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+/* The knob inside the slider */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+/* Background and knob when checked */
+.toggle-switch input:checked + .slider {
+    background-color: green; /* Background turns green */
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(20px); /* Move the knob to the right */
+}

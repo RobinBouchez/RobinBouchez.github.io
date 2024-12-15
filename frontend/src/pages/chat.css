@@ -1,6 +1,5 @@
 .chat-page {
   height: 100vh;
-  background-color: hsl(var(--base-200));
 }
 
 .chat-page-container {
@@ -23,7 +22,5 @@
   display: flex;
   height: 100%;
   flex-direction: column; 
-
-
   height: calc(100vh - 8rem);
 }

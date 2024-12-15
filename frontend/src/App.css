@@ -5,6 +5,7 @@
     background: var(--background-color);
     margin: 0;
     text-align: center;
+    flex: 1;
 }
 
 h1{

@@ -1,0 +1,73 @@
+.FAQWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.FAQForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.FAQLabel {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.FAQinput {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.FAQinput:focus {
+  outline: none;
+  border-color: var(--icon-color);
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.FAQButton {
+  padding: 12px 20px;
+  background-color: var(--icon-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.FAQButton:hover {
+  background-color: var(--icon-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.FAQButton:active {
+  transform: translateY(1px);
+}
+
+.FAQResponse {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-style: italic;
+}

@@ -1,14 +1,26 @@
 .content-card  {
     width: 300px;
+    min-width: 300px;
     margin: 20px 20px;
     border: 1px solid lightgrey;
     border-radius: 20px;
 }
+
+.content-card:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 .content-card img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+    height: 250px; 
+    object-fit: cover; 
+    object-position: center; 
+    border-top-left-radius: 20px; /* Match the card's border radius */
+    border-top-right-radius: 20px;
+   }
+
+   
 .content-card .bottomCard {
     position: relative;
     text-align: left;

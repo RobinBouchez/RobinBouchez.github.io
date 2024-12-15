@@ -1,0 +1,68 @@
+/* Header styling */
+.App .header {
+  color: var(--text-color);
+}
+
+
+.filterButtons{
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  margin: 5px;
+}
+
+/* Toggle buttons container */
+.view-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Base styling for toggle buttons */
+.view-toggle-buttons button {
+  background-color: #e0e0e0;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for toggle buttons */
+.view-toggle-buttons button:hover {
+  background-color: #d6d6d6;
+}
+
+/* Active toggle button styling */
+.view-toggle-buttons .btn.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Split view sections styling */
+.left-side, .right-side {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Center ContentPage horizontally and vertically */
+.centered-horizontal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style adjustments for the ContentPage inside centered view */
+.centered-horizontal > div {
+  max-width: 800px;
+  width: 100%;
+}

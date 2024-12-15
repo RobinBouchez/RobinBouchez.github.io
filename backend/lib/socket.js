@@ -7,9 +7,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["/"],
-    methods: ["GET", "POST"],
+    origin: ["http://localhost:3000", "https://switcharoom.social", "https://robinbouchez.github.io", "https://www.switcharoom.social" ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     path: "/socket.io/",
+    allowedHeaders: ['Content-Type', 'Authorization'],
   },
 });
 

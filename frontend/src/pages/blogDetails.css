@@ -1,0 +1,59 @@
+/* Global container for the blog details page */
+.blogDetailsContainer {
+
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Title styling */
+.blogDetailsTitle {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 1rem;
+  
+  
+}
+
+/* Author, Date, and Read Time section */
+.blogDetailsInfo {
+  display: flex;
+  justify-content: space-between;
+  color: #555555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #00000011;
+}
+
+.blogDetailsAuthor,
+.blogDetailsDate,
+.blogDetailsReadTime {
+  margin-right: 1rem;
+}
+
+/* Main content styling */
+.blogDetailsContent {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #444444;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Tags section */
+.blogDetailsTags {
+  margin-top: 2rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.blogDetailsTag {
+  padding: 0.3rem 0.7rem;
+  background-color: #f0f8ff;
+  color: #0077cc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: default;
+}

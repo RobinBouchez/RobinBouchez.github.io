@@ -47,6 +47,7 @@ const Sidebar = () => {
                         onClick={() => setSelectedUser(user)}
                         className={`user-item ${selectedUser?._id === user._id ? 'selected' : ''}`}
                     >
+                        
                         <div className="user-avatar">
                             <img
                                 src={user.profilePic || "/avatar.png"}
@@ -57,7 +58,7 @@ const Sidebar = () => {
                             )}
                         </div>
                         <div className="user-info">
-                            <div className="user-name">{user.fullName}</div>
+                            <div className="user-name">{user.firstName} {user.lastName}</div>
                             <div className="user-status">
                                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
                             </div>

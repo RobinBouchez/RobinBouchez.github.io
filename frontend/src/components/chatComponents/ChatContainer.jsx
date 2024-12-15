@@ -1,13 +1,16 @@
 import { useChatStore } from "../../store/useChatStore";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
 import MessageSkeleton from "./skeletons/MessageSkeleton";
 import { useAuthStore } from "../../store/useAuthStore";
-import { formatMessageTime } from "./lib/utils";
+import { formatMessageTime } from "../../lib/utils";
 import "./ChatContainer.css"; // Import the CSS file
+const randomInt = (min = 0, max = 1000) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const ChatContainer = () => {
+    const reserveSenderPic = `https://avatar.iran.liara.run/public/${randomInt(1, 70)}`
+    const reserveRecieverPic = `https://avatar.iran.liara.run/public/${randomInt(1, 70)}`
     const {
         messages,
         getMessages,
@@ -17,19 +20,12 @@ const ChatContainer = () => {
         unsubscribeFromMessages,
     } = useChatStore();
     const { authUser } = useAuthStore();
-    const messageEndRef = useRef(null);
 
     useEffect(() => {
         getMessages(selectedUser._id);
         subscribeToMessages();
         return () => unsubscribeFromMessages();
     }, [selectedUser._id, getMessages, subscribeToMessages, unsubscribeFromMessages]);
-
-    useEffect(() => {
-        if (messageEndRef.current && messages) {
-            messageEndRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [messages]);
 
     if (isMessagesLoading) {
         return (
@@ -53,15 +49,14 @@ const ChatContainer = () => {
                                 ? "chat-message-end" 
                                 : "chat-message-start"
                         }`}
-                        ref={messageEndRef}
                     >
                         <div className="chat-avatar">
                             <img
                                 src={
                                     message.senderId === authUser._id
-                                        ? authUser.profilePic || "/avatar.png"
-                                        : selectedUser.profilePic || "/avatar.png"
-                                }
+                                        ? authUser.profilePic || reserveRecieverPic
+                                        : selectedUser.profilePic || reserveSenderPic
+                                } 
                                 alt="profile pic"
                             />
                         </div>

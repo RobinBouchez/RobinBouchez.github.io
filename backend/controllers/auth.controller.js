@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import User from "../model/user.model.js";
 import { config } from "dotenv";
 import { generateToken } from "../lib/utils.js";
+const randomInt = (min = 0, max = 1000) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 config();
 
@@ -20,12 +21,16 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+
+    const Pic = `https://avatar.iran.liara.run/public/${randomInt(1, 70)}`
+
     // Create new user
     const newUser = new User({
       firstName,
       lastName,
       email,
       password: hashedPassword,
+      profilePic: Pic,
     });
     
     generateToken(newUser._id, res);
@@ -59,6 +64,26 @@ export const loginUser = async (req, res) => {
   } catch (e) {
     console.log(e);
   }
+};
+
+
+export const loginGoogleUser = async (req, res) => {
+  const { id, email, firstName, lastName, profilePic, access_token } = req.body;
+  const user = new User({
+    _id: id,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    password: access_token,
+    profilePic: profilePic,
+  });
+    generateToken(user._id, res);
+    const exists = await User.findOne({ email });
+    console.log(exists);  
+    if (!exists) {
+      await user.save();
+    }
+    res.json({ user: user });
 };
 
 export const getAccount = (req, res) => {

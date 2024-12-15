@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ContentCard from "./contentCard";
 import Spinner from "react-bootstrap/Spinner";
 import "./ContentGrid.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import axios from "axios";
 
 // API service
@@ -88,6 +89,62 @@ export const getListings = async () => {
         amenityIds: "",
         cancelPolicy: "CANCEL_MODERATE",
         price: "0",
+      },
+      {
+        id: "41362381",
+        url: "https://www.airbnb.com/rooms/41362381",
+        deeplink:
+          "https://www.airbnb.com/rooms/41362381?check_in=2025-01-12&check_out=2025-01-13&adults=1&children=0&infants=0&pets=0",
+        position: 4,
+        name: "bed in a hostel in Berlin centre",
+        bathrooms: 1,
+        bedrooms: 1,
+        beds: 6,
+        city: "Berlin",
+        images: "",
+        hostThumbnail:
+          "https://a0.muscache.com/im/pictures/user/9b59fbff-3ceb-4650-ab77-bac1a7de3244.jpg?aki_policy=profile_x_medium",
+        isSuperhost: false,
+        rareFind: false,
+        lat: 52.4983024597168,
+        lng: 13.384405136108398,
+        persons: 7,
+        reviewsCount: 774,
+        rating: 4.52,
+        type: "Shared room in hostel",
+        userId: 277288176,
+        address: "Berlin, Berlin, Germany",
+        amenityIds: "",
+        cancelPolicy: "CANCEL_FLEXIBLE",
+        price: "10",
+      },
+      {
+        id: "41362381",
+        url: "https://www.airbnb.com/rooms/41362381",
+        deeplink:
+          "https://www.airbnb.com/rooms/41362381?check_in=2025-01-12&check_out=2025-01-13&adults=1&children=0&infants=0&pets=0",
+        position: 4,
+        name: "bed in a hostel in Berlin centre",
+        bathrooms: 1,
+        bedrooms: 1,
+        beds: 6,
+        city: "Berlin",
+        images: "",
+        hostThumbnail:
+          "https://a0.muscache.com/im/pictures/user/9b59fbff-3ceb-4650-ab77-bac1a7de3244.jpg?aki_policy=profile_x_medium",
+        isSuperhost: false,
+        rareFind: false,
+        lat: 52.4983024597168,
+        lng: 13.384405136108398,
+        persons: 7,
+        reviewsCount: 774,
+        rating: 4.52,
+        type: "Shared room in hostel",
+        userId: 277288176,
+        address: "Berlin, Berlin, Germany",
+        amenityIds: "",
+        cancelPolicy: "CANCEL_FLEXIBLE",
+        price: "10",
       },
       {
         id: "41362381",
@@ -232,10 +289,18 @@ function ContentGrid() {
   }
 
   return (
-    <div className="contentGrid">
-      {listings.map((listing) => (
-        <ContentCard key={listing.id} listing={listing} />
-      ))}
+    <div className="contentContainer">
+      <div className="arrow">
+        <FaArrowLeft />
+      </div>
+      <div className="contentGrid">
+        {listings.map((listing) => (
+          <ContentCard key={listing.id} listing={listing} />
+        ))}
+      </div>
+      <div className="arrow">
+        <FaArrowRight />
+      </div>
     </div>
   );
 }

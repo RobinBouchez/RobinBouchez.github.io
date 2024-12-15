@@ -24,7 +24,7 @@ function Home() {
           <button>
             Get Started
           </button>
-          <button>
+          <button onClick={() => window.location.href = "/FAQ"}>
             Learn More
           </button>
         </div>

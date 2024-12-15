@@ -10,7 +10,6 @@ import axios from "axios";
 import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
 import "./TopNav.css";
-import imagePic from "../assets/international-student-navigator-australia-xCzDFEFPK1w-unsplash.jpg";
 
 import TitleLogo from "../TitleLogo/TitleLogo";
 
@@ -47,12 +46,18 @@ function TopNav() {
         <Nav.Link className="NavText" href="../listing">
           Browse
         </Nav.Link>
+        <Nav.Link className="NavText" href="../blog">
+          Blog
+        </Nav.Link>
+        <Nav.Link className="NavText" href="../FAQ">
+          FAQ
+        </Nav.Link>
       </Nav>
       <Nav className="rightNavButtons NavLinks">
         <form onSubmit={logout}>
-          <Dropdown drop="down-centered" hidden={user == null}>
+          <Dropdown drop="start" hidden={user == null}>
             <Dropdown.Toggle className="ProfileDropdown">
-              <Image src={imagePic} roundedCircle />
+              {(user != null) && <Image src={user.profilePic} roundedCircle />}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/account" eventKey="account">
@@ -88,7 +93,7 @@ function TopNav() {
           />
         </form>
         <div className="languageSelector">
-          <Dropdown drop="down-centered">
+          <Dropdown drop="start">
             <Dropdown.Toggle className="ProfileDropdown">
               <MdLanguage className="languageIcon" />
             </Dropdown.Toggle>

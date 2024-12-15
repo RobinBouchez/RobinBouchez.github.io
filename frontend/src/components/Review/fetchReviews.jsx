@@ -2,7 +2,7 @@ import axios from "axios";
 
 const fetchReviews = async (userEmail) => {
   try {
-    const response = await axios.get("http://localhost:4000/reviews", {
+    const response = await axios.get("/reviews", {
       params: { userEmail },
     });
 
