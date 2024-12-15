@@ -125,9 +125,9 @@ app.get("/api/faq", async (req, res) => {
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-  });
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 //Route to get all listings.
 app.get("/getListings", async (req, res) => {
