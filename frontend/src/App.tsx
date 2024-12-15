@@ -8,7 +8,6 @@ import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
 import Account from './pages/account';
 import SearchResult from  './pages/searchResult';
-import { HashRouter as Router } from "react-router-dom";
 import { UserProvider } from './context/userContext';
 import axios from 'axios';
 import ListingPage from './pages/listingPage';
@@ -23,6 +22,7 @@ import FAQ from './pages/faq';
 
 axios.defaults.baseURL = '/api/';
 axios.defaults.withCredentials = true;
+import { HashRouter as Router } from "react-router-dom";
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
@@ -34,6 +34,7 @@ function App() {
   }, [checkAuth]);
 
   return (
+    <Router>
     <UserProvider>
       <Routes>
         <Route path="/" element={<HomeWrapper />}>
@@ -51,6 +52,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </UserProvider>
+    </Router>
   );
 }
 
